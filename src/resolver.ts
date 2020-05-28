@@ -52,6 +52,7 @@ export default class CardResolver {
   }
 
   @Subscription(_returns => Card, {
+    nullable: true,
     topics: 'newCard',
     filter: ({ payload, args }) => args.cpf === payload.cpf
   })
