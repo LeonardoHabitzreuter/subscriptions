@@ -1,0 +1,29 @@
+{
+  "name": "subscriptions",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "next dev"
+  },
+  "dependencies": {
+    "@apollo/react-hooks": "^3.1.5",
+    "@apollo/react-ssr": "^3.1.5",
+    "@types/ws": "^7.2.4",
+    "apollo-boost": "^0.4.9",
+    "apollo-link-ws": "^1.0.20",
+    "graphql": "^15.0.0",
+    "isomorphic-fetch": "^2.2.1",
+    "isomorphic-ws": "^4.0.1",
+    "next": "9.3.5",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "subscriptions-transport-ws": "^0.9.16",
+    "ws": "^7.3.0"
+  },
+  "devDependencies": {
+    "@types/isomorphic-fetch": "^0.0.35",
+    "@types/node": "^13.13.1",
+    "@types/react": "^16.9.34",
+    "@types/react-dom": "^16.9.6",
+    "typescript": "^3.8.3"
+  }
+}
