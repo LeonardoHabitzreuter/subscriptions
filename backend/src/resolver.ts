@@ -11,7 +11,7 @@ class Card {
   cpf: string
 
   @Field()
-  status: string
+  status: Status
 }
 
 @InputType()
@@ -20,19 +20,20 @@ class CreateCardInput {
   cpf: string
 }
 
-let currentStatus = 'approved'
-const worker = () => {
-  currentStatus = currentStatus === 'approved' ? 'rejected' : 'approved'
+const worker = (cpf: string) => {
   setTimeout(() => {
-    myEmitter.emit('cardReleased', currentStatus)
+    myEmitter.emit('cardReleased', {
+      cpf,
+      status: cpf === '123' ? 'approved' : 'rejected'
+    })
   }, 5000)
 }
 
 const sendCardToWorker = (input: CreateCardInput, publish: (payload: Card) => Promise<void>) => {
-  myEmitter.on('cardReleased', (status: Status) => {
-    publish({ ...input, status })
+  myEmitter.on('cardReleased', (card: Card) => {
+    publish(card)
   })
-  worker()
+  worker(input.cpf)
 }
 
 @Resolver(_of => Card)
