@@ -13,7 +13,7 @@
     "graphql": "^15.0.0",
     "isomorphic-fetch": "^2.2.1",
     "isomorphic-ws": "^4.0.1",
-    "next": "9.3.5",
+    "next": "11.1.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "subscriptions-transport-ws": "^0.9.16",
